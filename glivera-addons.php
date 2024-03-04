@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Glivera Team Elementor Addons
- * Plugin URI:        https://glivera-team.com/
+ * Plugin URI:        https://plugins.glivera.com/
  * Description:       Custom widgets for Elementor Page Builder from Glivera Team
  * Version:           1.0.0
  * Author:            Glivera Team
