@@ -159,15 +159,15 @@ class Steps_Widget extends \Elementor\Widget_Base
         <li class="about_section__item item_about">
             <div class="item_about__wrapper">
                 <div class="item_about__head head_item">
-                    <h3 class="head_item__title"><?php echo $step['step_title'] ?></h3>
-                    <div class="head_item__number"><?php echo $step['step_number'] ?></div>
+                    <h3 class="head_item__title"><?php echo esc_html($step['step_title']) ?></h3>
+                    <div class="head_item__number"><?php echo esc_html($step['step_number']) ?></div>
                 </div>
                 <div class="item_about__text"><?php echo wp_kses_post($step['step_description']) ?></div>
 
                 <div class="item_about__footer">
                     <a class="item_about__link item_about__link--active"
-                        <?php echo $this->get_render_attribute_string( 'step_link' ); ?> >
-                        <?php echo $step['step_link_text'] ?>
+                        <?php echo esc_html($this->get_render_attribute_string( 'step_link' )) ?> >
+                        <?php echo esc_html($step['step_link_text']) ?>
                     </a>
                 </div>
 

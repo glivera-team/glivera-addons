@@ -249,11 +249,11 @@ class Hero_Widget extends \Elementor\Widget_Base
             <div class='section_in hero__in'>
                 <div class='hero__content'>
                     <div class='hero__info'>
-                        <h1><?php echo $hero['title'] ?></h1>
+                        <h1><?php echo wp_kses_post($hero['title']) ?></h1>
                        <?php echo wp_kses_post($hero['description']) ?>
                     </div>
-                    <a class="btn_primary btn_primary--icon_mod btn_primary" <?php echo $this->get_render_attribute_string( 'hero_link' ); ?>>
-						<span><?php echo $hero['hero_link_title']?></span>
+                    <a class="btn_primary btn_primary--icon_mod btn_primary" <?php echo wp_kses_post($this->get_render_attribute_string( 'hero_link' )) ?>>
+						<span><?php echo wp_kses_post($hero['hero_link_title'])?></span>
                         <span class="btn_primary__arrow_r">
                             <span class="icon icon--size_mod">
                                 <?php \Elementor\Icons_Manager::render_icon( $hero['hero_icon'], [ 'aria-hidden' => 'true' ] ); ?>
