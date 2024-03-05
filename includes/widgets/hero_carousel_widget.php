@@ -100,7 +100,7 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
                                         <picture class="glivera_carousel__picture">
                                             <source srcset="<?php echo esc_url($item['list_image_webp']['url']) ?>" type="image/webp" />
                                             <source srcset="<?php echo esc_url($item['list_image']['url']) ?>" />
-                                            <img src="<?php echo esc_url($item['list_image']['url']) ?>" alt="<?php echo \Elementor\Control_Media::get_image_alt( $item['list_image'] ) ?>" class="glivera_carousel__img"
+                                            <img src="<?php echo esc_url($item['list_image']['url']) ?>" alt="<?php echo wp_kses_post(\Elementor\Control_Media::get_image_alt( $item['list_image'] )) ?>" class="glivera_carousel__img"
                                             /></picture>
                                     </div>
                                 <?php }

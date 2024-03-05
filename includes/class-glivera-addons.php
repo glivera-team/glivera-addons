@@ -270,13 +270,13 @@ class Glivera_Addons {
      * Register scripts and styles for Elementor widgets.
      */
     public function elementor_widgets_dependencies() {
-        wp_register_style( 'hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ) );
-        wp_register_style( 'hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ) );
-        // wp_register_style( 'collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ) );
-        wp_register_style( 'steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ) );
+        wp_register_style( 'hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
 
-        wp_register_script( 'hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ) );
-        wp_register_script( 'hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ) );
+        wp_register_script( 'hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
+        wp_register_script( 'hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
 
     }
 
