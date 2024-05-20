@@ -3,13 +3,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class Collection_Widget extends \Elementor\Widget_Base
+class GTEA_Collection_Widget extends \Elementor\Widget_Base
 {
 
 
     public function get_name()
     {
-        return 'collection_widget';
+        return 'gtea_collection_widget';
     }
 
     public function get_title()
@@ -35,7 +35,7 @@ class Collection_Widget extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ['collection-widget'];
+        return ['gtea_collection-widget'];
     }
 
     protected function register_controls()
@@ -70,26 +70,26 @@ class Collection_Widget extends \Elementor\Widget_Base
         $collection = $this->get_settings_for_display();
 
         ?>
-        <section class="section collections_section">
+        <section class="section gtea_collections_section">
             <div class="section_in">
-                <div class="section_head">
-                    <h3 class="section_head__title">Collezioni</h3><a class="section_head__link" href="#">Tutte le collezioni</a>
+                <div class="gtea_section_head">
+                    <h3 class="gtea_section_head__title">Collezioni</h3><a class="gtea_section_head__link" href="#">Tutte le collezioni</a>
                 </div>
-                <div class="mobile_slider js-mobile-slider-wrap">
-                    <div class="mobile_slider__controls">
-                        <div class="mobile_slider__controls_item mobile_slider__controls_item--prev_mod js-mobile-slider-prev">
-                            <svg class="icon icon_arrow_prev icon--size_mod">
+                <div class="gtea_mobile_slider gtea_js-mobile-slider-wrap">
+                    <div class="gtea_mobile_slider__controls">
+                        <div class="gtea_mobile_slider__controls_item gtea_mobile_slider__controls_item--prev_mod gtea_js-mobile-slider-prev">
+                            <svg class="gtea_icon gtea_icon_arrow_prev gtea_icon--size_mod">
                                 <use xlink:href="images/sprite/sprite.svg#arrow_prev"></use>
                             </svg>
                         </div>
-                        <div class="mobile_slider__controls_item mobile_slider__controls_item--next_mod js-mobile-slider-next">
-                            <svg class="icon icon_arrow_next icon--size_mod">
+                        <div class="gtea_mobile_slider__controls_item gtea_mobile_slider__controls_item--next_mod gtea_js-mobile-slider-next">
+                            <svg class="gtea_icon gtea_icon_arrow_next gtea_icon--size_mod">
                                 <use xlink:href="images/sprite/sprite.svg#arrow_next"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="collections_section__list js-collections-slider">
-                        <div class="collections js-fade-el">
+                    <div class="gtea_collections_section__list gtea_js-collections-slider">
+                        <div class="gtea_collections gtea_js-fade-el">
                             <a class="collections_main" href="#" data-speed="1" data-lag="0.45">
                                 <div class="collections__pic_wrap">
                                     <picture class="collections__pic js-scale-el">

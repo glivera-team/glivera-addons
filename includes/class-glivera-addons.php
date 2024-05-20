@@ -63,7 +63,7 @@ class Glivera_Addons {
      * @since 1.0.0
      * @var string Minimum Elementor version required to run the addon.
      */
-    const MINIMUM_ELEMENTOR_VERSION = '3.16.0';
+    const GTEA_MINIMUM_ELEMENTOR_VERSION = '3.16.0';
 
     /**
      * Minimum PHP Version
@@ -71,7 +71,7 @@ class Glivera_Addons {
      * @since 1.0.0
      * @var string Minimum PHP version required to run the addon.
      */
-    const MINIMUM_PHP_VERSION = '7.4';
+    const GTEA_MINIMUM_PHP_VERSION = '7.4';
 
 
 	/**
@@ -116,13 +116,13 @@ class Glivera_Addons {
         }
 
         // Check for required Elementor version
-        if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
+        if ( ! version_compare( ELEMENTOR_VERSION, self::GTEA_MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
             add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
             return false;
         }
 
         // Check for required PHP version
-        if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
+        if ( version_compare( PHP_VERSION, self::GTEA_MINIMUM_PHP_VERSION, '<' ) ) {
             add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
             return false;
         }
@@ -248,10 +248,10 @@ class Glivera_Addons {
         require_once( __DIR__ . '/widgets/hero_carousel_widget.php' );
 
 
-        $widgets_manager->register( new \Hero_Widget() );
-        $widgets_manager->register( new \Steps_Widget() );
+        $widgets_manager->register( new \GTEA_Hero_Widget() );
+        $widgets_manager->register( new \GTEA_Steps_Widget() );
         // $widgets_manager->register( new \Collection_Widget() );
-        $widgets_manager->register( new \Hero_Carousel_Widget() );
+        $widgets_manager->register( new \GTEA_Hero_Carousel_Widget() );
 
     }
 
@@ -270,13 +270,13 @@ class Glivera_Addons {
      * Register scripts and styles for Elementor widgets.
      */
     public function elementor_widgets_dependencies() {
-        wp_register_style( 'hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
-        wp_register_style( 'hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
-        wp_register_style( 'collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
-        wp_register_style( 'steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'gtea_hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'gtea_hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'gtea_collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'gtea_steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
 
-        wp_register_script( 'hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
-        wp_register_script( 'hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
+        wp_register_script( 'gtea_hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
+        wp_register_script( 'gtea_hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
 
     }
 

@@ -3,13 +3,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class Hero_Carousel_Widget extends \Elementor\Widget_Base
+class GTEA_Hero_Carousel_Widget extends \Elementor\Widget_Base
 {
 
 
     public function get_name()
     {
-        return 'hero_carousel_widget';
+        return 'gtea_hero_carousel_widget';
     }
 
     public function get_title()
@@ -35,10 +35,10 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ['hero-widget-carousel'];
+        return ['gtea_hero-widget-carousel'];
     }
     public function get_script_depends() {
-        return [ 'hero-widget-carousel-swiper', 'hero-widget-carousel' ];
+        return [ 'gtea_hero-widget-carousel-swiper', 'gtea_hero-widget-carousel' ];
     }
 
     protected function register_controls()
@@ -89,19 +89,20 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
         $hero_carousel = $this->get_settings_for_display();
         $list = $hero_carousel['hero_carousel_list'];
         ?>
-        <section class="section glivera_carousel">
-            <div class="glivera_carousel__wrap js-carousel">
-                <div class="glivera_carousel__inner swiper js-carousel-slider">
+        <section class="section gtea_glivera_carousel">
+            <div class="gtea_glivera_carousel__wrap gtea_js-carousel">
+                <div class="gtea_glivera_carousel__inner swiper gtea_js-carousel-slider">
                     <div class="swiper-wrapper">
                         <?php
                             if (!empty($list)) {
                                 foreach ($list as $item) { ?>
-                                    <div class="swiper-slide glivera_carousel__card">
-                                        <picture class="glivera_carousel__picture">
+                                    <div class="swiper-slide gtea_glivera_carousel__card">
+                                        <picture class="gtea_glivera_carousel__picture">
                                             <source srcset="<?php echo esc_url($item['list_image_webp']['url']) ?>" type="image/webp" />
                                             <source srcset="<?php echo esc_url($item['list_image']['url']) ?>" />
-                                            <img src="<?php echo esc_url($item['list_image']['url']) ?>" alt="<?php echo wp_kses_post(\Elementor\Control_Media::get_image_alt( $item['list_image'] )) ?>" class="glivera_carousel__img"
-                                            /></picture>
+                                            <img src="<?php echo esc_url($item['list_image']['url']) ?>" alt="<?php echo wp_kses_post(\Elementor\Control_Media::get_image_alt( $item['list_image'] )) ?>" class="gtea_glivera_carousel__img"
+                                            />
+                                        </picture>
                                     </div>
                                 <?php }
                             }
@@ -111,12 +112,12 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
                     <button
                             type="button"
                             aria-label="Prev slide"
-                            class="swiper-button-prev"
+                            class="gtea_swiper-button-prev"
                     ></button>
                     <button
                             type="button"
                             aria-label="Next slide"
-                            class="swiper-button-next"
+                            class="gtea_swiper-button-next"
                     ></button>
                 </div>
             </div>
@@ -131,17 +132,17 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
     {
         ?>
 
-        <section class="section glivera_carousel">
-            <div class="glivera_carousel__wrap js-carousel">
-                <div class="glivera_carousel__inner swiper js-carousel-slider">
+        <section class="section gtea_glivera_carousel">
+            <div class="gtea_glivera_carousel__wrap gtea_js-carousel">
+                <div class="gtea_glivera_carousel__inner swiper gtea_js-carousel-slider">
                     <div class="swiper-wrapper">
                         <# if ( settings.hero_carousel_list.length ) { #>
                             <# _.each( settings.hero_carousel_list, function( item ) { #>
-                            <div class="swiper-slide glivera_carousel__card">
-                                <picture class="glivera_carousel__picture">
+                            <div class="swiper-slide gtea_glivera_carousel__card">
+                                <picture class="gtea_glivera_carousel__picture">
                                     <source srcset="{{item.list_image_webp.url}}" type="image/webp" />
                                     <source srcset="{{item.list_image.url}}" />
-                                    <img src="{{item.list_image.url}}" alt="" class="glivera_carousel__img"
+                                    <img src="{{item.list_image.url}}" alt="" class="gtea_glivera_carousel__img"
                                     /></picture>
                             </div>
                             <# }); #>
@@ -151,12 +152,12 @@ class Hero_Carousel_Widget extends \Elementor\Widget_Base
                     <button
                             type="button"
                             aria-label="Prev slide"
-                            class="swiper-button-prev"
+                            class="gtea_swiper-button-prev"
                     ></button>
                     <button
                             type="button"
                             aria-label="Next slide"
-                            class="swiper-button-next"
+                            class="gtea_swiper-button-next"
                     ></button>
                 </div>
             </div>
