@@ -3,13 +3,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class Steps_Widget extends \Elementor\Widget_Base
+class GTEA_Steps_Widget extends \Elementor\Widget_Base
 {
 
 
     public function get_name()
     {
-        return 'steps_widget';
+        return 'gtea_steps_widget';
     }
 
     public function get_title()
@@ -35,7 +35,7 @@ class Steps_Widget extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ['steps-widget'];
+        return ['gtea_steps-widget'];
     }
 
     protected function register_controls()
@@ -156,16 +156,16 @@ class Steps_Widget extends \Elementor\Widget_Base
             $this->add_link_attributes( 'step_link', $step['step_link'] );
         }
         ?>
-        <li class="about_section__item item_about">
-            <div class="item_about__wrapper">
-                <div class="item_about__head head_item">
-                    <h3 class="head_item__title"><?php echo esc_html($step['step_title']) ?></h3>
-                    <div class="head_item__number"><?php echo esc_html($step['step_number']) ?></div>
+        <li class="gtea_about_section__item gtea_item_about">
+            <div class="gtea_item_about__wrapper">
+                <div class="gtea_item_about__head gtea_head_item">
+                    <h3 class="gtea_head_item__title"><?php echo esc_html($step['step_title']) ?></h3>
+                    <div class="gtea_head_item__number"><?php echo esc_html($step['step_number']) ?></div>
                 </div>
-                <div class="item_about__text"><?php echo wp_kses_post($step['step_description']) ?></div>
+                <div class="gtea_item_about__text"><?php echo wp_kses_post($step['step_description']) ?></div>
 
-                <div class="item_about__footer">
-                    <a class="item_about__link item_about__link--active"
+                <div class="gtea_item_about__footer">
+                    <a class="gtea_item_about__link gtea_item_about__link--active"
                         <?php echo esc_html($this->get_render_attribute_string( 'step_link' )) ?> >
                         <?php echo esc_html($step['step_link_text']) ?>
                     </a>
@@ -183,16 +183,16 @@ class Steps_Widget extends \Elementor\Widget_Base
     {
         ?>
 
-        <li class="about_section__item item_about">
-            <div class="item_about__wrapper">
-                <div class="item_about__head head_item">
-                    <h3 class="head_item__title">{{settings.step_title}}</h3>
-                    <div class="head_item__number">{{settings.step_number}}</div>
+        <li class="gtea_about_section__item gtea_item_about">
+            <div class="gtea_item_about__wrapper">
+                <div class="gtea_item_about__head gtea_head_item">
+                    <h3 class="gtea_head_item__title">{{settings.step_title}}</h3>
+                    <div class="gtea_head_item__number">{{settings.step_number}}</div>
                 </div>
-                <div class="item_about__text">{{{settings.step_description}}}</div>
+                <div class="gtea_item_about__text">{{{settings.step_description}}}</div>
 
-                <div class="item_about__footer">
-                    <a class="item_about__link item_about__link--active"
+                <div class="gtea_item_about__footer">
+                    <a class="gtea_item_about__link gtea_item_about__link--active"
                        href="{{ settings.step_link.url }}">
                         {{settings.step_link_text}} </a>
                 </div>

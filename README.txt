@@ -34,6 +34,9 @@ Glivera Team widgets for Elementor page builder
 == Feedback and Support: ==
 If you encounter any issues or have any suggestions for improvement, please feel free to reach out to our support team at [dev@glivera-team.com](mailto:dev@glivera-team.com).
 
+== Resources: ==
+- Swiper Slider https://www.jsdelivr.com/package/npm/swiper
+
 == License: ==
 Glivera-Team Elementor Addons is licensed under the GNU General Public License v2 or later.
 

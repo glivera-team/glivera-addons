@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const SELECTORS = {
-        section: ".js-carousel",
-        slider: ".js-carousel-slider",
+        section: ".gtea_js-carousel",
+        slider: ".gtea_js-carousel-slider",
     };
 
     const $sections = document.querySelectorAll(SELECTORS.section);
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ScrollTrigger?.refresh();
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".gtea_swiper-button-next",
+                prevEl: ".gtea_swiper-button-prev",
             },
             breakpoints: {
                 1: {
