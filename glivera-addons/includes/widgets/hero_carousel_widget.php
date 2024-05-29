@@ -35,10 +35,10 @@ class GTEA_Hero_Carousel_Widget extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ['gtea_hero-widget-carousel'];
+        return ['gtea_hero-widget-carousel', 'elementor-frontend'];
     }
     public function get_script_depends() {
-        return [ 'gtea_hero-widget-carousel-swiper', 'gtea_hero-widget-carousel' ];
+        return [ 'swiper', 'gtea_hero-widget-carousel' ];
     }
 
     protected function register_controls()

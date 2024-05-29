@@ -98,7 +98,7 @@ class Glivera_Addons {
             $this->define_admin_hooks();
             $this->define_public_hooks();
             $this->define_elementor_hooks();
-            // $this->init_options_menu_page();
+            $this->init_options_menu_page();
 
         }
 

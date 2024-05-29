@@ -73,7 +73,7 @@ class Glivera_Addons_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/glivera-addons-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name.'-admin', plugin_dir_url( __FILE__ ) . 'css/glivera-addons-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Glivera_Addons_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/glivera-addons-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name.'-admin', plugin_dir_url( __FILE__ ) . 'js/glivera-addons-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
