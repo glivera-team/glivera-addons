@@ -244,13 +244,13 @@ class Glivera_Addons {
     public function register_elementor_widgets($widgets_manager) {
         require_once( __DIR__ . '/widgets/hero_widget.php' );
         require_once( __DIR__ . '/widgets/steps_widget.php' );
-        // require_once( __DIR__ . '/widgets/collection_widget.php' );
+        require_once( __DIR__ . '/widgets/service1_widget.php' );
         require_once( __DIR__ . '/widgets/hero_carousel_widget.php' );
 
 
         $widgets_manager->register( new \GTEA_Hero_Widget() );
         $widgets_manager->register( new \GTEA_Steps_Widget() );
-        // $widgets_manager->register( new \Collection_Widget() );
+        $widgets_manager->register( new \GTEA_Service1_Widget() );
         $widgets_manager->register( new \GTEA_Hero_Carousel_Widget() );
 
     }
@@ -272,10 +272,10 @@ class Glivera_Addons {
     public function elementor_widgets_dependencies() {
         wp_register_style( 'gtea_hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
         wp_register_style( 'gtea_hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
-        wp_register_style( 'gtea_collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
+        wp_register_style( 'gtea_service1-widget', plugins_url( 'css/glivera-service1-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
         wp_register_style( 'gtea_steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
 
-        wp_register_script( 'gtea_hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
+        wp_register_script('swiper', ELEMENTOR_ASSETS_URL . 'lib/swiper/swiper.min.js', ['jquery'], false, true);
         wp_register_script( 'gtea_hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ), array(), GLIVERA_ADDONS_VERSION, array('in_footer'  => 'true') );
 
     }
