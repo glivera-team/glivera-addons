@@ -3,13 +3,13 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-class Hero_Widget extends \Elementor\Widget_Base
+class GTEA_Hero_Widget extends \Elementor\Widget_Base
 {
 
 
 	public function get_name()
 	{
-		return 'hero_widget';
+		return 'gtea_hero_widget';
 	}
 
 	public function get_title()
@@ -35,7 +35,7 @@ class Hero_Widget extends \Elementor\Widget_Base
 
 	public function get_style_depends()
 	{
-		return ['hero-widget'];
+		return ['gtea_hero-widget'];
 	}
 
 	protected function register_controls()
@@ -147,7 +147,44 @@ class Hero_Widget extends \Elementor\Widget_Base
                     'flex-end' => esc_html__( 'Bottom', 'glivera-addons' ),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .elementor-widget-container ' => 'display: flex; flex-direction: column; justify-content: {{VALUE}};',
+                    '{{WRAPPER}} .gtea_hero ' => 'display: flex; flex-direction: column; justify-content: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'hero-height',
+            [
+                'label' => esc_html__( 'Hero Height', 'textdomain' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'vh',  'custom' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1200,
+                        'step' => 5,
+                    ],
+                    'rem' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => '%',
+                    'size' => 50,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .gtea_hero' => 'min-height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'hero-padding',
+            [
+                'label' => esc_html__( 'Hero Padding', 'textdomain' ),
+                'type' => \Elementor\Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+                'selectors' => [
+                    '{{WRAPPER}} .gtea_hero' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -178,7 +215,7 @@ class Hero_Widget extends \Elementor\Widget_Base
                     'size' => 114,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hero__content' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .gtea_hero__content' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -188,7 +225,7 @@ class Hero_Widget extends \Elementor\Widget_Base
             [
                 'label' => esc_html__( 'Title Typography', 'glivera-addons' ),
                 'name' => 'title_typography',
-                'selector' => '{{WRAPPER}} .hero__info h1',
+                'selector' => '{{WRAPPER}} .gtea_hero__info h1',
             ]
         );
         $this->add_group_control(
@@ -196,7 +233,7 @@ class Hero_Widget extends \Elementor\Widget_Base
             [
                 'label' => esc_html__( 'Content Typography', 'glivera-addons' ),
                 'name' => 'content_typography',
-                'selector' => '{{WRAPPER}} .hero__info p',
+                'selector' => '{{WRAPPER}} .gtea_hero__info p',
             ]
         );
 
@@ -205,7 +242,7 @@ class Hero_Widget extends \Elementor\Widget_Base
             [
                 'label' => esc_html__( 'Link Typography', 'glivera-addons' ),
                 'name' => 'link_typography',
-                'selector' => '{{WRAPPER}} .btn_primary',
+                'selector' => '{{WRAPPER}} .gtea_btn_primary',
             ]
         );
 
@@ -224,7 +261,7 @@ class Hero_Widget extends \Elementor\Widget_Base
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .btn_primary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .gtea_btn_primary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -242,19 +279,19 @@ class Hero_Widget extends \Elementor\Widget_Base
             $this->add_link_attributes( 'hero_link', $hero['hero_link'] );
         }
 		?>
-        <section class='section hero hero--color_white_mod hero--1_mod'>
-            <picture class="hero__img_w">
-                <?php echo wp_get_attachment_image( $hero['picture']['id'], 'full', false, array('class' => 'hero__img') ); ?>
+        <section class='section gtea_hero gtea_hero--color_white_mod hero--1_mod'>
+            <picture class="gtea_hero__img_w">
+                <?php echo wp_get_attachment_image( $hero['picture']['id'], 'full', false, array('class' => 'gtea_hero__img') ); ?>
             </picture>
-            <div class='section_in hero__in'>
-                <div class='hero__content'>
-                    <div class='hero__info'>
-                        <h1><?php echo $hero['title'] ?></h1>
+            <div class='section_in gtea_hero__in'>
+                <div class='gtea_hero__content'>
+                    <div class='gtea_hero__info'>
+                        <h1><?php echo wp_kses_post($hero['title']) ?></h1>
                        <?php echo wp_kses_post($hero['description']) ?>
                     </div>
-                    <a class="btn_primary btn_primary--icon_mod btn_primary" <?php echo $this->get_render_attribute_string( 'hero_link' ); ?>>
-						<span><?php echo $hero['hero_link_title']?></span>
-                        <span class="btn_primary__arrow_r">
+                    <a class="gtea_btn_primary gtea_btn_primary--icon_mod" <?php echo wp_kses_post($this->get_render_attribute_string( 'hero_link' )) ?>>
+						<span><?php echo wp_kses_post($hero['hero_link_title'])?></span>
+                        <span class="gtea_btn_primary__arrow_r">
                             <span class="icon icon--size_mod">
                                 <?php \Elementor\Icons_Manager::render_icon( $hero['hero_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                             </span>
@@ -292,20 +329,20 @@ class Hero_Widget extends \Elementor\Widget_Base
         }
         }
         #>
-        <section class='section hero hero--color_white_mod hero--1_mod'>
-            <picture class="hero__img_w">
-                <img class="hero__img" src="{{ image_url }}" alt="">
+        <section class='section gtea_hero gtea_hero--color_white_mod hero--1_mod'>
+            <picture class="gtea_hero__img_w">
+                <img class="gtea_hero__img" src="{{ image_url }}" alt="">
             </picture>
             <div class='section_in hero__in'>
-                <div class='hero__content'>
-                    <div class='hero__info'>
+                <div class='gtea_hero__content'>
+                    <div class='gtea_hero__info'>
                         <h1>{{{title}}}</h1>
                         {{{description}}}
                     </div>
 
-                    <a class="btn_primary btn_primary--icon_mod btn_primary" href="{{ settings.hero_link.url }}">
+                    <a class="gtea_btn_primary gtea_btn_primary--icon_mod" href="{{ settings.hero_link.url }}">
 						<span>{{link_title}}</span>
-                        <span class="btn_primary__arrow_r">
+                        <span class="gtea_btn_primary__arrow_r">
                             <span class="icon icon--size_mod">
                                 {{{ iconHTML.value }}}
                             </span>

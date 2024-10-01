@@ -1,0 +1,206 @@
+
+.gtea_chronology * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.gtea_chronology {
+    background-color: var(--light-3);
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology {
+        padding: 6rem 2rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_chronology {
+        padding: 4rem 1.4rem;
+    }
+}
+
+.gtea_chronology__container {
+    max-width: 133.6rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology__header {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology__header:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_chronology__header:not(:last-child) {
+        margin-bottom: 3.6rem;
+    }
+}
+
+.gtea_chronology__title {
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology__title {
+        font-size: 4.2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_chronology__title {
+        font-size: 3.6rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology__title:not(:last-child) {
+        margin-bottom: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_chronology__title:not(:last-child) {
+        margin-bottom: 1.8rem;
+    }
+}
+
+.gtea_chronology__subtitle {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.gtea_chronology__list {
+    list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+    .gtea_chronology__list {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 1 auto;
+        margin-right: -2rem;
+        margin-bottom: -2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .gtea_chronology__item {
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_chronology__item {
+        width: calc(100% / 6);
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    .gtea_chronology__item {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gtea_chronology__item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gtea_chronology__item:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+.gtea_chronology__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2.2rem 2rem 7.2rem 2.2rem;
+    color: inherit;
+    border-radius: 1rem;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.gtea_chronology__card:not(.gtea_chronology__card--accent_mod) {
+    background-color: #eeeff1;
+    box-shadow: 0 0 0 1px #8e7dff inset;
+}
+
+.gtea_chronology__card.gtea_chronology__card--accent_mod {
+    background-color: #cdc3ff;
+}
+
+.gtea_chronology__card:hover,
+.gtea_chronology__card:focus {
+    text-decoration: none;
+}
+
+.gtea_chronology__card:not(.gtea_chronology__card--accent_mod):hover,
+.gtea_chronology__card:not(.gtea_chronology__card--accent_mod):focus {
+    background-color: #f7f7f7;
+}
+
+.gtea_chronology__card.gtea_chronology__card--accent_mod:hover,
+.gtea_chronology__card.gtea_chronology__card--accent_mod:focus {
+    box-shadow: 0 0 0 1px #5f6489 inset;
+}
+
+.gtea_chronology__card_title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.gtea_chronology__card_title:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
+
+.gtea_chronology__card_text {
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+.gtea_chronology__card_text p:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.gtea_chronology__card_icon {
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+
+    color: #8e7dff;
+}
+
+.gtea_chronology__card_icon svg {
+    fill: currentColor;
+}
+
+.gtea_chronology__card--accent_mod .gtea_chronology__card_icon {
+    color: currentColor !important;
+}
+
+.gtea_chronology__card_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

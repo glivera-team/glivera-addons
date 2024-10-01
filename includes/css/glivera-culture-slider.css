@@ -1,0 +1,449 @@
+.gtea_culture_slider__wrapper {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.gtea_culture_slider__line {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.gtea_culture_slider .section_in {
+    max-width: 100% !important;
+}
+
+.gtea_culture_slider .js-gtea_parallax {
+    will-change: transform, opacity;
+}
+
+.gtea_culture_slider__pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.gtea_culture_slider__pagination.gtea_culture_slider__pagination--disabled_state {
+    pointer-events: none;
+}
+
+.gtea_culture_slider__pagination .swiper-pagination-bullet {
+    border: 1px solid #c6c6c6;
+    opacity: 1;
+
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.gtea_culture_slider__pagination .swiper-pagination-bullet:hover,
+.gtea_culture_slider__pagination
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    border-color: #c97647;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    pointer-events: none;
+}
+
+.gtea_culture_slider__swiper.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+
+.gtea_culture_slider__content {
+    text-align: center;
+}
+
+.gtea_culture__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #657de9;
+
+    will-change: transform;
+}
+
+.gtea_culture__wrap svg {
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+.gtea_culture__wrap.gtea_culture__wrap--color_v1_mod {
+    background-color: #eec5ae;
+}
+
+.gtea_culture__wrap.gtea_culture__wrap--color_v2_mod {
+    background-color: #171515;
+}
+
+.gtea_culture_slider__icon {
+    display: block;
+    object-fit: contain;
+}
+
+.gtea_culture_slider__title {
+    font-weight: 100;
+
+    overflow: hidden;
+    will-change: transform;
+}
+
+.gtea_culture_slider__title strong {
+    font-weight: 400;
+}
+
+.gtea_culture_slider__text {
+    color: #191b1d;
+
+    overflow: hidden;
+    will-change: transform;
+}
+
+.gtea_culture_slider__text:not(:last-child) {
+    margin-bottom: 4rem;
+}
+
+.gtea_culture_slider__button {
+    display: inline-block;
+}
+
+.gtea_culture_slider__media {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.gtea_culture_slider__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    will-change: transform;
+}
+
+.gtea_culture_slider__picture:not(:first-child) {
+    opacity: 0;
+}
+
+.gtea_culture_slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.gtea_btn_base {
+    position: relative;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+
+    font-weight: 500;
+    color: #fff;
+    transition: 0.3s ease;
+
+    border-radius: 10rem;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.gtea_btn_base span {
+    position: relative;
+    z-index: 2;
+}
+
+.gtea_btn_base:before,
+.gtea_btn_base:after {
+    content: "";
+    position: absolute;
+}
+
+.gtea_btn_base:before {
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    z-index: 1;
+
+    padding-top: 100%;
+    width: 100%;
+
+    background-color: #c97647;
+    transform: scale(0) translate(-50%, -50%);
+    transform-origin: var(--mouse-x) var(--mouse-y);
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.gtea_btn_base:after {
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #2e2f2b;
+    will-change: transform;
+}
+
+.gtea_btn_base:hover:before {
+    transform: scale(1) translate(-50%, -50%);
+}
+
+.gtea_btn_base:hover,
+.gtea_btn_base:focus {
+    text-decoration: none;
+}
+
+html:not(.elementor-html) body[data-js-inited] .gtea_culture_slider__content {
+    opacity: 0;
+}
+
+html:not(.elementor-html) body[data-js-inited] .gtea_culture_slider__picture {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+.elementor-html .gtea_culture_slider__slide:not(:first-child) {
+    display: none !important;
+}
+.elementor-html .gtea_culture_slider__media:not(:first-child) {
+    display: none !important;
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --gl-indent: 11.8rem;
+        --gl-vr-indent: 17rem;
+    }
+
+    .gtea_culture_slider__pagination {
+        --swiper-pagination-bullet-horizontal-gap: 0.6em;
+    }
+
+    .gtea_culture_slider__pagination .swiper-pagination-bullet {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .gtea_culture_slider__row {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .gtea_culture_slider__column:nth-child(1) {
+        width: 45%;
+        order: 1;
+    }
+
+    .gtea_culture_slider__column:nth-child(2) {
+        width: 55%;
+        order: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .gtea_culture_slider__swiper.swiper {
+        overflow: visible;
+        max-width: 44rem;
+    }
+
+    .gtea_culture_slider__swiper:not(:last-child) {
+        margin-bottom: 9.4rem;
+    }
+
+    .gtea_culture__wrap {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .gtea_culture__wrap:not(:last-child) {
+        margin-bottom: 9.4rem;
+    }
+
+    .gtea_culture_slider__icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        font-size: 3.8rem;
+        color: #fff;
+    }
+
+    .gtea_culture_slider__title {
+        font-size: 6rem;
+    }
+
+    .gtea_culture_slider__title:not(:last-child) {
+        margin-bottom: 3.4rem;
+    }
+
+    .gtea_culture_slider__text {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    .gtea_culture_slider__media {
+        height: 97vh;
+    }
+
+    .gtea_btn_base {
+        height: 6.6rem;
+        line-height: 6.6rem;
+        padding: 0 4rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1023.5px) {
+    html {
+        font-size: 10px;
+    }
+
+    .gtea_culture_slider__swiper {
+        max-width: 36rem;
+    }
+
+    .gtea_culture_slider__swiper:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+
+    .gtea_culture_slider__pagination .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .gtea_culture_slider__icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .gtea_culture_slider__text {
+        line-height: 2;
+    }
+
+    .gtea_culture_slider__media {
+        max-width: 48.4rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    :root {
+        --gl-indent: 5rem;
+        --gl-vr-indent: 14rem;
+    }
+
+    .gtea_culture_slider__column:not(:last-child) {
+        margin-bottom: 6.2rem;
+    }
+
+    .gtea_culture_slider__pagination {
+        --swiper-pagination-bullet-horizontal-gap: 1.6rem;
+    }
+
+    .gtea_culture__wrap {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .gtea_culture__wrap:not(:last-child) {
+        margin-bottom: 3.4rem;
+    }
+
+    .gtea_culture_slider__title:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .gtea_culture_slider__title {
+        font-size: 4.5rem;
+    }
+
+    .gtea_culture_slider__text {
+        font-size: 1.1rem;
+    }
+
+    .gtea_culture_slider__media {
+        height: 28.2rem;
+    }
+
+    .gtea_btn_base {
+        height: 5rem;
+        line-height: 5rem;
+        padding: 0 3.6rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --gl-indent: 3rem;
+        --gl-vr-indent: 8rem;
+    }
+
+    .gtea_culture_slider__column:not(:last-child) {
+        margin-bottom: 6.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .gtea_culture_slider__pagination {
+        --swiper-pagination-bullet-horizontal-gap: 1rem;
+    }
+
+    .gtea_culture__wrap {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .gtea_culture__wrap:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .gtea_culture_slider__title:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .gtea_culture_slider__title {
+        font-size: 2.8rem;
+    }
+
+    .gtea_culture_slider__text {
+        font-size: 1rem;
+    }
+
+    .gtea_culture_slider__media {
+        height: 39vw;
+    }
+
+    .gtea_btn_base {
+        height: 4rem;
+        line-height: 4rem;
+        padding: 0 2.2rem;
+        font-size: 1rem;
+    }
+}
