@@ -1,0 +1,9 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.elementor-button.go-pro {
+    background-image: linear-gradient(to right, #138EFF, #FFCA0F);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}

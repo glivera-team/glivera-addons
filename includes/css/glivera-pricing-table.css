@@ -1,0 +1,431 @@
+.gtea_pricing * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing {
+        padding: 6rem 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing {
+        padding: 4rem 2rem;
+    }
+}
+
+.gtea_pricing__container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.gtea_pricing {
+    position: relative;
+    overflow: hidden;
+}
+
+.gtea_pricing_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.gtea_pricing_bg__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gtea_pricing__title {
+    font-size: 4.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
+
+.gtea_pricing__title:not(:last-child) {
+    margin-bottom: 5.2rem;
+}
+
+.gtea_pricing__period {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing__period:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__period:not(:last-child) {
+        margin-bottom: 8.8rem;
+    }
+}
+
+.gtea_pricing__period_in {
+    padding: 4px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.51);
+}
+
+.gtea_pricing__label {
+    position: relative;
+    display: flex;
+    color: #fff;
+}
+
+.gtea_pricing__input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.gtea_pricing__input:checked ~ .gtea_pricing__switcher {
+    transform: translateX(calc(100% + 0.8rem));
+}
+
+.gtea_pricing__input:checked ~ .gtea_pricing__plan--month_mod {
+    color: inherit;
+}
+
+.gtea_pricing__input:checked ~ .gtea_pricing__plan--year_mod {
+    color: #262729;
+}
+
+.gtea_pricing__switcher {
+    transition: transform 0.3s ease;
+    will-change: transform;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: calc(50% - 0.8rem / 2);
+    height: 100%;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.gtea_pricing__plan {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__plan {
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing__plan {
+        min-width: 17.4rem;
+        font-size: 1.4rem;
+    }
+}
+
+.gtea_pricing__plan:hover,
+.gtea_pricing__plan:focus {
+    text-decoration: none;
+}
+
+.gtea_pricing__plan.gtea_pricing__plan--month_mod {
+    color: #262729;
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__body {
+        margin-left: calc(var(--gl-indent) * -1);
+        width: calc(100% + var(--gl-indent) * 2);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing__body:not(:last-child) {
+        margin-bottom: 3.6rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__body:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+}
+
+.gtea_pricing__list {
+    display: flex;
+    align-items: stretch;
+    margin-right: -1.6rem;
+    list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing__list {
+        flex-wrap: wrap;
+        margin-bottom: -2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__list {
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 0 var(--gl-indent);
+    }
+}
+
+.gtea_pricing__item {
+    width: 33.333%;
+    padding-right: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing__item {
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_pricing__item {
+        min-width: calc(36rem + 1.6rem);
+    }
+}
+
+.gtea_pricing_card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 2.4rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+@media screen and (min-width: 1366px) {
+    .gtea_pricing_card {
+        padding: 3.5rem 5rem 4.4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+    .gtea_pricing_card {
+        padding: 2.4rem 2rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_pricing_card {
+        padding: 3.5rem 5rem 4.4rem;
+    }
+}
+
+.gtea_pricing_card__body {
+    flex: 1 1 auto;
+}
+
+.gtea_pricing_card__body:not(:last-child) {
+    margin-bottom: 6.8rem;
+}
+
+.gtea_pricing_card__wrap {
+    width: 3.8rem;
+    height: 4.8rem;
+}
+
+.gtea_pricing_card__wrap:not(:last-child) {
+    margin-bottom: 1.6rem;
+}
+
+.gtea_pricing_card__img,
+.gtea_pricing_card__wrap svg{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.gtea_pricing_card__wrap i {
+    font-size: 3.8rem;
+}
+
+.gtea_pricing_card__title {
+    font-weight: 700;
+    color: #262729;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing_card__title {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_pricing_card__title {
+        font-size: 1.8rem;
+    }
+}
+
+.gtea_pricing_card__title:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.gtea_pricing_card__price_wrap:not(:last-child) {
+    margin-bottom: 3.8rem;
+}
+
+.gtea_pricing_card__price {
+    font-size: 1.6rem;
+    color: #939394;
+    font-weight: 500;
+}
+
+.gtea_pricing_card__price strong {
+    font-weight: 700;
+    color: #262729;
+}
+
+.gtea_pricing_card__price s {
+    text-decoration: line-through;
+}
+
+.gtea_pricing_card__price small {
+    font-size: 1.3rem;
+    color: #5028f3;
+}
+
+.gtea_pricing_card__item {
+    display: flex;
+    max-width: 24rem;
+}
+
+.gtea_pricing_card__item:not(:last-child) {
+    margin-bottom: 1.4rem;
+}
+
+.gtea_pricing_card__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+}
+
+.gtea_pricing_card__icon:not(:last-child) {
+    margin-right: 1.2rem;
+}
+
+.gtea_pricing_card__text {
+    color: #262729;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing_card__text {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_pricing_card__text {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_pricing_card__button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.gtea_pricing_card__button_in {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    padding: 0 2.4rem;
+
+    line-height: 4.8rem;
+    text-decoration: none;
+
+    border-radius: 0.8rem;
+
+    font-weight: 600;
+    color: #fff;
+    background-color: #5028f3;
+
+    transition: background-color 0.3s ease;
+}
+
+.gtea_pricing_card__button_in:hover,
+.gtea_pricing_card__button_in:focus {
+    text-decoration: none;
+    background-color: #2400b2;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_pricing_card__button_in {
+        min-width: 15rem;
+        height: 4.8rem;
+
+        font-size: max(1.4rem, 10px);
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_pricing_card__button_in {
+        min-width: 10rem;
+        height: 2.8rem;
+
+        font-size: max(1rem, 10px);
+    }
+}
+
+.gtea_pricing_card__list {
+    padding: 0;
+}
+
+.gtea_pricing_card__icon i {
+    font-size: 2rem;
+}
+
+.gtea_pricing_card__icon svg {
+    fill: currentColor;
+}
+
+.gtea_pricing_card__button_in {
+    transition: all 0.3s ease;
+}
+
+.gtea_pricing_card__button_in:hover {
+    color: #fff;
+
+}
