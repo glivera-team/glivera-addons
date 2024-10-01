@@ -1,0 +1,278 @@
+
+.gtea_services1 * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.gtea_services1__container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.gtea_services1__title {
+    font-weight: 300;
+    line-height: 0.9;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__title {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    .gtea_services1__title {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gtea_services1__title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__title:not(:last-child) {
+        margin-bottom: 8.2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__title:not(:last-child) {
+        margin-bottom: 6.2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__list_w:not(:last-child) {
+        margin-bottom: 9.2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__list_w:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+}
+
+.gtea_services1__list {
+    list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+    .gtea_services1__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__list {
+        margin: 0 -19.4rem -9.4rem 0;
+        padding-top: 24rem;
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    .gtea_services1__list {
+        margin: 0 -8.4rem -6.4rem 0;
+        padding-top: 14rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .gtea_services1__list_item {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__list_item {
+        padding: 0 19.4rem 9.4rem 0;
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    .gtea_services1__list_item {
+        padding: 0 8.4rem 6.4rem 0;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .gtea_services1__list_item:nth-child(odd) {
+        margin-top: -24rem;
+        margin-bottom: 24rem;
+    }
+}
+
+@media (max-width: 1023.5px) and (min-width: 768px) {
+    .gtea_services1__list_item:nth-child(odd) {
+        margin-top: -14rem;
+        margin-bottom: 14rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__list_item:not(:last-child) {
+        margin-bottom: 4.4rem;
+    }
+}
+
+.gtea_services1__link_w {
+    display: flex;
+    justify-content: center;
+}
+
+.gtea_services1__link {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: #414141;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.gtea_services1__link:hover,
+.gtea_services1__link:focus {
+    text-decoration: none;
+}
+
+.gtea_services1__link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    will-change: transform;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.gtea_services1__link:hover,
+.gtea_services1__link:focus {
+    text-decoration: none;
+}
+
+.gtea_services1__link:hover::after,
+.gtea_services1__link:focus::after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.gtea_services1__in {
+    display: block;
+    width: 100%;
+    color: #414141;
+    text-decoration: none;
+}
+
+.gtea_services1__in:hover,
+.gtea_services1__in:focus {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__in:not(:last-child) {
+        margin-bottom: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__in:not(:last-child) {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.gtea_services1__media {
+    position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__media:not(:last-child) {
+        margin-bottom: 3.2rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__media:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+.gtea_services1__pic {
+    z-index: 1;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 133.4%;
+    overflow: hidden;
+}
+
+.gtea_services1__img {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+a.gtea_services1__in:hover .gtea_services1__img,
+a.gtea_services1__in:focus .gtea_services1__img {
+    transform: scale(1.15);
+}
+
+.gtea_services1__title {
+    font-weight: 300;
+    line-height: 0.96;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services1__title {
+        font-size: 4.8rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services1__title {
+        font-size: 4rem;
+    }
+}
+
+.gtea_services1__title:not(:last-child) {
+    margin-bottom: 1.2rem;
+}
+
+.gtea_services1__text {
+    font-weight: 400;
+    line-height: 1.4;
+    line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+    .gtea_services1__text {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gtea_services1__text {
+        font-size: 1.8rem;
+    }
+}

@@ -3,13 +3,13 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-class Steps_Widget extends \Elementor\Widget_Base
+class GTEA_Steps_Widget extends \Elementor\Widget_Base
 {
 
 
     public function get_name()
     {
-        return 'steps_widget';
+        return 'gtea_steps_widget';
     }
 
     public function get_title()
@@ -35,7 +35,7 @@ class Steps_Widget extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ['steps-widget'];
+        return ['gtea_steps-widget'];
     }
 
     protected function register_controls()
@@ -47,7 +47,8 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'label' => __('Steps Content', 'glivera-addons'),
             ]
         );
-        $this->add_control(
+        $repeater = new \Elementor\Repeater();
+        $repeater->add_control(
             'step_title',
             [
                 'label' => __('Title', 'glivera-addons'),
@@ -55,7 +56,7 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'default' => __('Title', 'glivera-addons'),
             ]
         );
-        $this->add_control(
+        $repeater->add_control(
             'step_number',
             [
                 'label' => __('Number', 'glivera-addons'),
@@ -63,7 +64,7 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'default' => __('Title', 'glivera-addons'),
             ]
         );
-        $this->add_control(
+        $repeater->add_control(
             'step_description',
             [
                 'label' => esc_html__( 'Description', 'glivera-addons' ),
@@ -72,7 +73,7 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'placeholder' => esc_html__( 'Type your description here', 'glivera-addons' ),
             ]
         );
-        $this->add_control(
+        $repeater->add_control(
             'step_link',
             [
                 'label' => esc_html__( 'Step Button URL', 'glivera-addons' ),
@@ -87,12 +88,20 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'label_block' => true,
             ]
         );
-        $this->add_control(
+        $repeater->add_control(
             'step_link_text',
             [
                 'label' => __('Step Button Text', 'glivera-addons'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => __('Learn More', 'glivera-addons'),
+            ]
+        );
+        $this->add_control(
+            'steps_list',
+            [
+                'label' => esc_html__( 'Steps List', 'glivera-addons' ),
+                'type' => \Elementor\Controls_Manager::REPEATER,
+                'fields' => $repeater->get_controls(),
             ]
         );
 
@@ -140,8 +149,16 @@ class Steps_Widget extends \Elementor\Widget_Base
                 'selector' => '{{WRAPPER}} .item_about__link',
             ]
         );
-
-
+        $this->add_control(
+            'link_hover_color',
+            [
+                'label' => esc_html__( 'Link Hover', 'glivera-addons' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .gtea_item_about__link:hover' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -152,28 +169,39 @@ class Steps_Widget extends \Elementor\Widget_Base
     protected function render()
     {
         $step = $this->get_settings_for_display();
-        if ( ! empty( $step['step_link']['url'] ) ) {
-            $this->add_link_attributes( 'step_link', $step['step_link'] );
-        }
+        $list = $step['steps_list'];
+
         ?>
-        <li class="about_section__item item_about">
-            <div class="item_about__wrapper">
-                <div class="item_about__head head_item">
-                    <h3 class="head_item__title"><?php echo $step['step_title'] ?></h3>
-                    <div class="head_item__number"><?php echo $step['step_number'] ?></div>
+            <section class="gtea_section gtea_about_section">
+                <div class="gtea_section__in gtea_about_section__in">
+                    <ol class="gtea_about_section__body">
+                    <?php
+                    if (!empty($list)) {
+                        foreach ($list as $item) {
+                            ?>
+                            <li class="gtea_about_section__item gtea_item_about">
+                                <div class="gtea_item_about__wrapper">
+                                    <div class="gtea_item_about__head gtea_head_item">
+                                        <h3 class="gtea_head_item__title"><?php echo esc_html($item['step_title']) ?></h3>
+                                        <div class="gtea_head_item__number"><?php echo esc_html($item['step_number']) ?></div>
+                                    </div>
+                                    <div class="gtea_item_about__text"><?php echo wp_kses_post($item['step_description']) ?></div>
+                                    <?php if ( ! empty( $item['step_link']['url'] ) ) { ?>
+                                        <div class="gtea_item_about__footer">
+                                            <a class="gtea_item_about__link gtea_item_about__link--active" href="<?php echo esc_attr($item['step_link']['url']) ?>">
+                                                <?php echo esc_html($item['step_link_text']) ?>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+
+                                </div>
+                            </li>
+                        <?php }
+                    }
+                    ?>
+                    </ol>
                 </div>
-                <div class="item_about__text"><?php echo wp_kses_post($step['step_description']) ?></div>
-
-                <div class="item_about__footer">
-                    <a class="item_about__link item_about__link--active"
-                        <?php echo $this->get_render_attribute_string( 'step_link' ); ?> >
-                        <?php echo $step['step_link_text'] ?>
-                    </a>
-                </div>
-
-            </div>
-        </li>
-
+            </section>
 
         <?php
 
@@ -183,22 +211,32 @@ class Steps_Widget extends \Elementor\Widget_Base
     {
         ?>
 
-        <li class="about_section__item item_about">
-            <div class="item_about__wrapper">
-                <div class="item_about__head head_item">
-                    <h3 class="head_item__title">{{settings.step_title}}</h3>
-                    <div class="head_item__number">{{settings.step_number}}</div>
-                </div>
-                <div class="item_about__text">{{{settings.step_description}}}</div>
+        <section class="gtea_section gtea_about_section">
+            <div class="gtea_section__in gtea_about_section__in">
+                <ol class="gtea_about_section__body">
+                    <#
+                    _.each(  settings.steps_list, function( item ) {
+                    #>
+                        <li class="gtea_about_section__item gtea_item_about">
+                            <div class="gtea_item_about__wrapper">
+                                <div class="gtea_item_about__head gtea_head_item">
+                                    <h3 class="gtea_head_item__title">{{item.step_title}}</h3>
+                                    <div class="gtea_head_item__number">{{item.step_number}}</div>
+                                </div>
+                                <div class="gtea_item_about__text">{{{item.step_description}}}</div>
 
-                <div class="item_about__footer">
-                    <a class="item_about__link item_about__link--active"
-                       href="{{ settings.step_link.url }}">
-                        {{settings.step_link_text}} </a>
-                </div>
+                                <div class="gtea_item_about__footer">
+                                    <a class="gtea_item_about__link gtea_item_about__link--active"
+                                       href="#">
+                                        {{item.step_link_text}} </a>
+                                </div>
 
+                            </div>
+                        </li>
+                    <# } ); #>
+                </ol>
             </div>
-        </li>
+        </section>
         <?php
     }
 

@@ -1,0 +1,403 @@
+.gtea_services2 * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.gtea_services2 {
+    color: #fff;
+
+    background-color: #131417;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2 {
+        padding: 10rem 2rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .gtea_services2 {
+        padding: 8rem 1.4rem;
+    }
+}
+
+.gtea_services2__container {
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
+.gtea_services2__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.gtea_services2__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top left;
+}
+
+.gtea_services2__group {
+    position: relative;
+    display: flex;
+    gap: 4rem;
+    padding: 0 2rem;
+    color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group:not(:last-child) {
+        margin-bottom: 21rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group:not(:last-child) {
+        margin-bottom: 21.6rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group.gtea_services2__group--left_mod {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group.gtea_services2__group--left_mod {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group.gtea_services2__group--right_mod {
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group.gtea_services2__group--right_mod {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__info {
+        max-width: 41.4rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__info {
+        max-width: 100%;
+        margin-bottom: 8.4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--left_mod .gtea_services2__info {
+        padding-top: 4.6rem;
+        margin-right: auto;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group--left_mod .gtea_services2__info {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--right_mod .gtea_services2__info {
+        padding-top: 26.4rem;
+        margin-left: auto;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group--right_mod .gtea_services2__info {
+        text-align: center;
+    }
+}
+
+.gtea_services2__title {
+    font-size: 4.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.gtea_services2__title:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+.gtea_services2__title strong {
+    font-weight: 700;
+}
+
+.gtea_services2__text {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__text {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+.gtea_services2__text:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
+
+.gtea_services2__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__list {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__list {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__item {
+        width: calc((100% - 6.8rem) / 2);
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__item {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--left_mod .gtea_services2__item:nth-child(even) {
+        padding-bottom: 5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--right_mod .gtea_services2__item:nth-child(even) {
+        margin-top: 5.4rem;
+        margin-left: 6.8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--left_mod .gtea_services2__item:nth-child(odd) {
+        margin-top: 5.4rem;
+        margin-right: 6.8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--right_mod .gtea_services2__item:nth-child(odd) {
+        padding-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__item:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--left_mod .gtea_services2__btn_w {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group--left_mod .gtea_services2__btn_w {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__group--right_mod .gtea_services2__btn_w {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__group--right_mod .gtea_services2__btn_w {
+        text-align: center;
+    }
+}
+
+.gtea_services2__btn {
+    min-width: 26.4rem;
+    height: 7.9rem;
+    padding: 0 2rem;
+    line-height: 4rem;
+    font-size: 1.8rem;
+    border-radius: 5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    will-change: transform;
+    background-color: #6EC1E4;
+    transform-origin: top center;
+    transition: transform 0.4s ease;
+}
+
+.gtea_services2__btn p {
+    margin-bottom: 0;
+}
+
+.gtea_services2__btn:hover,
+.gtea_services2__btn:focus {
+    text-decoration: none;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.gtea_services2__btn strong {
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+    .gtea_services2__mobile_bg_w {
+        display: none;
+    }
+}
+
+.gtea_service2__icon svg {
+    fill: currentColor;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_services2__mobile_bg_w {
+        position: absolute;
+        bottom: 50%;
+        right: -1rem;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+.gtea_services2__mobile_bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top right;
+}
+
+.gtea_service2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    padding: 4.2rem 3.4rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2.6rem;
+    overflow: hidden;
+}
+
+.gtea_service2::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.2rem;
+}
+
+.gtea_service2.gtea_service--mod_1::after {
+    background-color: #88e9ff;
+}
+
+.gtea_service2.gtea_service--mod_2::after {
+    background-color: #784dff;
+}
+
+.gtea_service2.gtea_service--mod_3::after {
+    background-color: #5097ff;
+}
+
+.gtea_service2.gtea_service--mod_5 {
+    padding: 10rem 3.4rem;
+}
+
+.gtea_service2__icon {
+    width: 10.8rem;
+    height: 10.8rem;
+    color: #C7F7FF;
+}
+
+.gtea_service2__icon:not(:last-child) {
+    margin-bottom: 3.2rem;
+}
+
+.gtea_service2__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    fill: currentColor;
+}
+
+.gtea_service2__title {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.gtea_service2__title:not(:last-child) {
+    margin-bottom: 3.2rem;
+}
+
+.gtea_service2--mod_4 .gtea_service2__title {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1023.5px) {
+    .gtea_service2--mod_4 .gtea_service2__title {
+        text-transform: uppercase;
+    }
+}
+
+.gtea_service2__text {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.gtea_service--mod_4 .gtea_service2__text {
+    line-height: 1.7;
+    color: #ccc;
+}

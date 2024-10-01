@@ -1,0 +1,77 @@
+.gtea_advanced_tabs__buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.gtea_advanced_tabs__button {
+    position: relative;
+    padding: 20px 25px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    border-radius: 7px;
+    white-space: normal;
+    background-color: #EBEFF1;
+}
+
+.gtea_advanced_tabs__button--mobile_mod {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .gtea_advanced_tabs__buttons {
+        display: none;
+    }
+    .gtea_advanced_tabs__button--mobile_mod {
+        display: block;
+    }
+}
+
+.gtea_advanced_tabs__button:focus {
+    outline: none;
+}
+
+.gtea_advanced_tabs__button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Tab content styling */
+.gtea_advanced_tabs__content {
+    margin-top: 20px;
+}
+
+.gtea_advanced_tabs__panel {
+    display: none;
+}
+
+.gtea_advanced_tabs__panel.active {
+    display: block;
+}
+
+.gtea_advanced_tabs__panel_wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.gtea_advanced_tabs__panel_content {
+    width: 50%;
+}
+
+.gtea_advanced_tabs__panel_svg {
+    width: 50%;
+}
+
+@media (max-width: 1023px) {
+    .gtea_advanced_tabs__panel_content,
+    .gtea_advanced_tabs__panel_svg {
+        width: 100%;
+    }
+}

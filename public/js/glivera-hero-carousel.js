@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const SELECTORS = {
-        section: ".js-carousel",
-        slider: ".js-carousel-slider",
+        section: ".js-gtea_animated_carousel",
+        slider: ".js-gtea_animated_carousel-slider",
     };
 
     const $sections = document.querySelectorAll(SELECTORS.section);

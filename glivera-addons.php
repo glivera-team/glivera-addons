@@ -14,11 +14,21 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Glivera Team Elementor Addons
+<<<<<<< HEAD
  * Plugin URI:        https://glivera-team.com/
  * Description:       Custom widgets for Elementor Page Builder from Glivera Team
  * Version:           1.0.0
  * Author:            Glivera Team
  * Author URI:        https://glivera-team.com/
+=======
+ * Plugin URI:        https://plugins.glivera.com/
+ * Description:       Custom widgets for Elementor Page Builder from Glivera Team
+ * Version:           1.2.1
+ * Author:            Glivera Team
+ * Author URI:        https://glivera-team.com/
+ * Elementor tested up to: 99
+ * Elementor Pro tested up to: 99
+>>>>>>> ddbb79d (added new files)
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       glivera-addons
@@ -35,13 +45,21 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
+<<<<<<< HEAD
 define( 'GLIVERA_ADDONS_VERSION', '1.0.0' );
+=======
+define( 'GLIVERA_ADDONS_VERSION', '1.2.1' );
+>>>>>>> ddbb79d (added new files)
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-glivera-addons-activator.php
  */
+<<<<<<< HEAD
 function activate_glivera_addons() {
+=======
+function gtea_activate_glivera_addons() {
+>>>>>>> ddbb79d (added new files)
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-glivera-addons-activator.php';
 	Glivera_Addons_Activator::activate();
 }
@@ -50,13 +68,22 @@ function activate_glivera_addons() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-glivera-addons-deactivator.php
  */
+<<<<<<< HEAD
 function deactivate_glivera_addons() {
+=======
+function gtea_deactivate_glivera_addons() {
+>>>>>>> ddbb79d (added new files)
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-glivera-addons-deactivator.php';
 	Glivera_Addons_Deactivator::deactivate();
 }
 
+<<<<<<< HEAD
 register_activation_hook( __FILE__, 'activate_glivera_addons' );
 register_deactivation_hook( __FILE__, 'deactivate_glivera_addons' );
+=======
+register_activation_hook( __FILE__, 'gtea_activate_glivera_addons' );
+register_deactivation_hook( __FILE__, 'gtea_deactivate_glivera_addons' );
+>>>>>>> ddbb79d (added new files)
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,10 +100,18 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-glivera-addons.php';
  *
  * @since    1.0.0
  */
+<<<<<<< HEAD
 function run_glivera_addons() {
+=======
+function gtea_run_glivera_addons() {
+>>>>>>> ddbb79d (added new files)
 
 	$plugin = new Glivera_Addons();
 	$plugin->run();
 
 }
+<<<<<<< HEAD
 run_glivera_addons();
+=======
+gtea_run_glivera_addons();
+>>>>>>> ddbb79d (added new files)
