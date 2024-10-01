@@ -370,4 +370,5 @@ class GTEA_Hero_Carousel_Widget extends \Elementor\Widget_Base
     }
 
 
+
 }

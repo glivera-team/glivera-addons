@@ -63,11 +63,7 @@ class Glivera_Addons {
      * @since 1.0.0
      * @var string Minimum Elementor version required to run the addon.
      */
-<<<<<<< HEAD
-    const MINIMUM_ELEMENTOR_VERSION = '3.16.0';
-=======
     const GTEA_MINIMUM_ELEMENTOR_VERSION = '3.16.0';
->>>>>>> ddbb79d (added new files)
 
     /**
      * Minimum PHP Version
@@ -75,11 +71,7 @@ class Glivera_Addons {
      * @since 1.0.0
      * @var string Minimum PHP version required to run the addon.
      */
-<<<<<<< HEAD
-    const MINIMUM_PHP_VERSION = '7.4';
-=======
     const GTEA_MINIMUM_PHP_VERSION = '7.4';
->>>>>>> ddbb79d (added new files)
 
 
 	/**
@@ -95,11 +87,7 @@ class Glivera_Addons {
 		if ( defined( 'GLIVERA_ADDONS_VERSION' ) ) {
 			$this->version = GLIVERA_ADDONS_VERSION;
 		} else {
-<<<<<<< HEAD
-			$this->version = '1.0.0';
-=======
 			$this->version = '1.0.1';
->>>>>>> ddbb79d (added new files)
 		}
 		$this->plugin_name = 'glivera-addons';
 
@@ -110,11 +98,7 @@ class Glivera_Addons {
             $this->define_admin_hooks();
             $this->define_public_hooks();
             $this->define_elementor_hooks();
-<<<<<<< HEAD
-            // $this->init_options_menu_page();
-=======
             $this->init_options_menu_page();
->>>>>>> ddbb79d (added new files)
 
         }
 
@@ -132,21 +116,13 @@ class Glivera_Addons {
         }
 
         // Check for required Elementor version
-<<<<<<< HEAD
-        if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
-=======
         if ( ! version_compare( ELEMENTOR_VERSION, self::GTEA_MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
->>>>>>> ddbb79d (added new files)
             add_action( 'admin_notices', [ $this, 'admin_notice_minimum_elementor_version' ] );
             return false;
         }
 
         // Check for required PHP version
-<<<<<<< HEAD
-        if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
-=======
         if ( version_compare( PHP_VERSION, self::GTEA_MINIMUM_PHP_VERSION, '<' ) ) {
->>>>>>> ddbb79d (added new files)
             add_action( 'admin_notices', [ $this, 'admin_notice_minimum_php_version' ] );
             return false;
         }
@@ -246,11 +222,7 @@ class Glivera_Addons {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-<<<<<<< HEAD
-
-=======
         $this->loader->add_action( 'elementor/frontend/after_register_scripts', $plugin_public, 'enqueue_scripts' );
->>>>>>> ddbb79d (added new files)
 	}
 
     /**
@@ -258,12 +230,6 @@ class Glivera_Addons {
      */
     private function define_elementor_hooks() {
         // Register Elementor widget initialization hook
-<<<<<<< HEAD
-        add_action( 'wp_enqueue_scripts', array($this, 'elementor_widgets_dependencies') );
-        add_action('elementor/widgets/widgets_registered', array($this, 'register_elementor_widgets'));
-        add_action( 'elementor/elements/categories_registered', array($this, 'add_elementor_widget_categories') );
-
-=======
         //add_action( 'wp_enqueue_scripts', array($this, 'elementor_widgets_dependencies') );
         add_action('elementor/widgets/widgets_registered', array($this, 'register_elementor_widgets'));
         add_action( 'elementor/elements/categories_registered', array($this, 'add_elementor_widget_categories') );
@@ -274,7 +240,6 @@ class Glivera_Addons {
         add_action( 'elementor/editor/after_enqueue_scripts', array($this, 'gtea_plugin_scripts')  );
 
 
->>>>>>> ddbb79d (added new files)
     }
 
     /**
@@ -285,16 +250,6 @@ class Glivera_Addons {
     public function register_elementor_widgets($widgets_manager) {
         require_once( __DIR__ . '/widgets/hero_widget.php' );
         require_once( __DIR__ . '/widgets/steps_widget.php' );
-<<<<<<< HEAD
-        // require_once( __DIR__ . '/widgets/collection_widget.php' );
-        require_once( __DIR__ . '/widgets/hero_carousel_widget.php' );
-
-
-        $widgets_manager->register( new \Hero_Widget() );
-        $widgets_manager->register( new \Steps_Widget() );
-        // $widgets_manager->register( new \Collection_Widget() );
-        $widgets_manager->register( new \Hero_Carousel_Widget() );
-=======
         require_once( __DIR__ . '/widgets/service1_widget.php' );
         require_once( __DIR__ . '/widgets/service2_widget.php' );
         require_once( __DIR__ . '/widgets/hero_carousel_widget.php' );
@@ -323,7 +278,6 @@ class Glivera_Addons {
         $widgets_manager->register( new \GTEA_Header_Widget() );
         $widgets_manager->register( new \GTEA_Marquee_Widget() );
         $widgets_manager->register( new \GTEA_Advanced_Tabs_Widget() );
->>>>>>> ddbb79d (added new files)
 
     }
 
@@ -341,19 +295,6 @@ class Glivera_Addons {
     /**
      * Register scripts and styles for Elementor widgets.
      */
-<<<<<<< HEAD
-    public function elementor_widgets_dependencies() {
-        wp_register_style( 'hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ) );
-        wp_register_style( 'hero-widget', plugins_url( 'css/glivera-hero-widget.css', __FILE__ ) );
-        // wp_register_style( 'collection-widget', plugins_url( 'css/glivera-collection-widget.css', __FILE__ ) );
-        wp_register_style( 'steps-widget', plugins_url( 'css/glivera-steps-widget.css', __FILE__ ) );
-
-        wp_register_script( 'hero-widget-carousel-swiper', plugins_url( 'libs/swiper-bundle.min.js', __FILE__ ) );
-        wp_register_script( 'hero-widget-carousel', plugins_url( 'js/glivera-hero-carousel.js', __FILE__ ) );
-
-    }
-
-=======
     public function gtea_plugin_styles() {
         wp_register_style( 'gtea_admin', plugins_url( 'css/glivera-addons-admin.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
         wp_register_style( 'gtea_hero-widget-carousel', plugins_url( 'css/glivera-hero-carousel.css', __FILE__ ), array(), GLIVERA_ADDONS_VERSION );
@@ -395,7 +336,6 @@ class Glivera_Addons {
     }
 
 
->>>>>>> ddbb79d (added new files)
 
     /**
      * Add Plugin Menu Page

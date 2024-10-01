@@ -11,10 +11,6 @@
  * @package    Glivera_Addons
  * @subpackage Glivera_Addons/admin/partials
  */
-<<<<<<< HEAD
-?>
-<h2>Here will be plugin homepage</h2>
-=======
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -58,7 +54,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     </div>
 </div>
 
->>>>>>> ddbb79d (added new files)
 
 <?php
 //    // Check if the checkbox is checked
